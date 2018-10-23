@@ -8,7 +8,7 @@ Collection of small cmdlets for daily use.
 
 See  [Mircrosoft Documentation](https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-powershell-core-on-linux?view=powershell-6).
 
-### Either do it manually:
+### Either do it manually
 
 ```Powershell
 # 1. Run `InstallModules.ps1`.
