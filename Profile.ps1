@@ -8,3 +8,5 @@ Import-Module -Force posh-git, posh-docker
 $global:GitPromptSettings.DefaultPromptAbbreviateHomeDirectory = $true
 $global:GitPromptSettings.BeforeText = '['
 $global:GitPromptSettings.AfterText  = '] '
+
+# additional functions that are machine specific
