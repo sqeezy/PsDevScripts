@@ -19,8 +19,6 @@ New-Item -Force $PROFILE
 Copy-Item -Force ./Profile.ps1 $PROFILE
 
 # 3. Restart Shell
-
-# 4. From now on every Powershell-Module(*.psm1) in `~/Github/PsDevScripts` gets imported at the shell startup.
 ```
 
 ### Or just run `./InstallDefaultSetup.ps1`
