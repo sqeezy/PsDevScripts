@@ -1,5 +1,4 @@
 function Get-OwnIp{
-    Invoke-RestMethod http://ipinfo.io/json | Select -exp ip
+    Invoke-RestMethod http://ipinfo.io/json | Select-Object -ExpandProperty ip
 }
-
-export-modulemember -function *
+Export-ModuleMember -Function *

@@ -1,6 +1,8 @@
-function Set-PowershellPrompt{
+function Edit-PowershellPrompt{
   if (!(Test-Path -Path $PROFILE)){
     New-Item -Path $PROFILE -ItemType File 
   } 
-  powershell_ise.exe $PROFILE
+  vim $PROFILE
 }
+
+Export-ModuleMember -Function *
