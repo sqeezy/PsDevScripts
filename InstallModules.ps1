@@ -1,1 +1,1 @@
-Install-Module -Scope CurrentUser posh-git, posh-docker
+Install-Module -Scope CurrentUser -Force posh-git, posh-docker
