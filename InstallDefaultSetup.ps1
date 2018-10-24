@@ -13,3 +13,4 @@ Write-Output "Now restart you 'pwsh'."
 Write-Output "If you are on linux and want to run pwsh as default, run 'chsh -s <path>' where path is the result of 'Get-Command pwsh'."
 
 # 4. From now on every Powershell-Module(*.psm1) in `~/Github/PsDevScripts` gets imported at the shell startup.
+Write-Output "From now on every *.psm1 file you place in ~/Github/PsDevScripts will be imported into your session on startup."
