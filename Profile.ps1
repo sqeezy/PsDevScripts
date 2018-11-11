@@ -13,4 +13,8 @@ $global:GitPromptSettings.AfterText  = '] '
 function GitLogBeauty {git log --pretty=format:"%h%x09%an%x09%ad%x09%s"}
 Set-Alias -Name glog -Value GitLogBeauty
 
+# add alias for docker utils
+Set-Alias -Name rmc -Value Remove-AllDockerContainers
+Set-Alias -Name rmai -Value Remove-AllUntagedDockerImages
+
 # additional functions that are machine specific
