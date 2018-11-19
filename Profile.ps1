@@ -17,4 +17,7 @@ Set-Alias -Name glog -Value GitLogBeauty
 Set-Alias -Name rmc -Value Remove-AllDockerContainers
 Set-Alias -Name rmai -Value Remove-AllUntagedDockerImages
 
+# add alias for svn utils
+Set-Alias -Name sclean -Value Remove-SvnCheckoutDirt
+
 # additional functions that are machine specific
