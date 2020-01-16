@@ -1,3 +1,8 @@
+function Remove-NonSvnVersionedFiles
+{
+svn status --no-ignore | grep '^[?I]' |  sed "s/^[?I] //" | xargs -I{} rm -rf "{}"
+}
+
 function Get-OwnIp{
     Invoke-RestMethod http://ipinfo.io/json | Select-Object -ExpandProperty ip
 }
