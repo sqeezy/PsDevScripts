@@ -11,7 +11,7 @@ function Get-DockerRegistryContent {
   Param(
   $Filter=".*",
   #TODO: handle https & no basic auth as well..
-  $RegistryEndpoint = "sda-container-registry:5000"
+  $RegistryEndpoint
 )
 
   $allRepos = (Invoke-RestMethod -Uri "http://$RegistryEndpoint/v2/_catalog" -Method Get ).repositories 
