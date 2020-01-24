@@ -1,9 +1,14 @@
 function Remove-AllUntagedDockerImages {
-  docker images | ConvertFrom-String | where {$_.P2 -eq "<none>"} | % { docker rmi $_.P3 }
+  docker images `
+    | ConvertFrom-String `
+    | Where-Object {$_.P2 -eq "<none>"} `
+    | ForEach-Object { docker rmi $_.P3 }
 }
 
 function Remove-AllDockerContainers {
-  docker ps -aq | ForEach-Object { docker stop -t 1 $_ } |  ForEach-Object { docker rm -vf $_ }
+  docker ps -aq `
+    | ForEach-Object { docker stop -t 1 $_ } `
+    | ForEach-Object { docker rm -vf $_ }
 }
 
 function Get-DockerRegistryContent {
