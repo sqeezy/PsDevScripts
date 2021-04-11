@@ -2,12 +2,17 @@
 Get-ChildItem -Filter "*.psm1" -File "~\Github\PsDevScripts" | ForEach-Object {Import-Module $_.FullName}
 
 # activate modules you want always to be active
-Import-Module -Force posh-git, posh-docker
+Import-Module posh-git
+Import-Module oh-my-posh
+Import-Module -Name Terminal-Icons
 
 # configure posh-git
 $global:GitPromptSettings.DefaultPromptAbbreviateHomeDirectory = $true
 $global:GitPromptSettings.BeforeText = '['
 $global:GitPromptSettings.AfterText  = '] '
+
+# configure oh-my-posh
+Set-PoshPrompt -Theme avit
 
 # add nice alias for git log formatting
 function GitLogBeauty {git log --pretty=format:"%h%x09%an%x09%ad%x09%s"}
