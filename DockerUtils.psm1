@@ -11,6 +11,15 @@ function Remove-AllDockerContainers {
     | ForEach-Object { docker rm -vf $_ }
 }
 
+function Start-ContainerWithLocalPathMounted {
+  param (
+    [string]$Image,
+    [string]$Entrypoint="powershell",
+    [string]$Command=""
+  )
+  docker run -it --rm -v "$(Resolve-Path .):C:/mount" -w C:/mount --entrypoint $Entrypoint $image $Command
+}
+
 function Get-DockerRegistryContent {
   [CmdletBinding()]
   Param(
