@@ -564,4 +564,8 @@ function Get-FileEncoding
     { if($legacyEncoding) { "ascii" } else { [System.Text.Encoding]::ASCII }}
 }
 
+function .. {cd ..}
+function ... {cd ../..}
+function .... {cd ../../..}
+
 Export-ModuleMember -Function *
