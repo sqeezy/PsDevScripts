@@ -1,3 +1,4 @@
+function New-Tab { wt -w 0 nt -d . }
 function Remove-NonSvnVersionedFiles
 {
 svn status --no-ignore | grep '^[?I]' |  sed "s/^[?I] //" | xargs -I{} rm -rf "{}"
