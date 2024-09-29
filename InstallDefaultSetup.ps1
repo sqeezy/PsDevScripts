@@ -3,9 +3,9 @@ Write-Output "Installing modules..."
 ./InstallModules.ps1
 
 # 2. Add default Profile config
-New-Item -Force $PROFILE | Out-Null
+New-Item -Force $PROFILE
 Write-Output "Now we copy the profile template to your own profile..."
-Copy-Item -Confirm ./Profile.ps1 $PROFILE
+Copy-Item -Confirm -Force $PSScriptRoot/Profile.ps1 $PROFILE
 Write-Output "You can always find it under `$PROFILE"
 
 # 3. Restart Shell
