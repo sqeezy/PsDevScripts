@@ -21,6 +21,17 @@ Set-Alias -Name rmai -Value Remove-AllUntagedDockerImages
 # add alias for svn utils
 Set-Alias -Name sclean -Value Remove-SvnCheckoutDirt
 
+# enable 'gh' auto-completions
+Invoke-Expression -Command $(gh completion -s powershell | Out-String)
+
+# enable 'dotnet' auto-completions
+Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock {
+    param($wordToComplete, $commandAst, $cursorPosition)
+        dotnet complete --position $cursorPosition "$commandAst" | ForEach-Object {
+            [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
+        }
+}
+
 Clear-Host # clear the screen so prompt is clean
 
 # additional functions that are machine specific
